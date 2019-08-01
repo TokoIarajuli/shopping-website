@@ -1,6 +1,7 @@
 body {
   font-family: "Raleway";
   padding: 20px 60px;
+  scroll-behavior: smooth;
 }
 
 a {
