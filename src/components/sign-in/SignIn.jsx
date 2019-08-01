@@ -2,6 +2,7 @@ import React from "react";
 import "./SignIn.scss";
 import FormInput from "../../components/form-input/FormInput";
 import Button from "../button/Button";
+import { signInWithGoogle } from "../../firebase/utils";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -13,14 +14,14 @@ class SignIn extends React.Component {
     };
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault();
 
     this.setState({ email: "", password: "" });
   };
 
-  handleChange = e => {
-    const { value, name } = e.target;
+  handleChange = event => {
+    const { value, name } = event.target;
 
     this.setState({ [name]: value });
   };
@@ -29,28 +30,31 @@ class SignIn extends React.Component {
     return (
       <div className="sign_in">
         <h2>I already have an account</h2>
-        <span>Sign in with your account</span>
+        <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
-            type="email"
             name="email"
+            type="email"
             handleChange={this.handleChange}
             value={this.state.email}
             label="email"
             required
           />
-
           <FormInput
-            type="password"
             name="password"
+            type="password"
             value={this.state.password}
             handleChange={this.handleChange}
             label="password"
             required
           />
-
-          <Button type="submit"> Sign In </Button>
+          <div className="buttons">
+            <Button type="submit"> Sign in </Button>
+            <Button onClick={signInWithGoogle} isGoogleSignIn>
+              Sign in with Google
+            </Button>
+          </div>
         </form>
       </div>
     );

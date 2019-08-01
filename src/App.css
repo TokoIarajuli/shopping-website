@@ -9,3 +9,7 @@ a {
   list-style: none;
   color: black;
 }
+
+* {
+  box-sizing: border-box;
+}
