@@ -2,3 +2,9 @@ body {
   font-family: "Raleway";
   padding: 20px 60px;
 }
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
