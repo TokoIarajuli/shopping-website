@@ -5,7 +5,7 @@ import { auth } from "../../firebase/utils";
 
 import "./header.scss";
 
-const Header = currentUser => (
+const Header = ({ currentUser }) => (
   <div className="header">
     <Link className="logo_container" to="/">
       <Logo className="logo" />
