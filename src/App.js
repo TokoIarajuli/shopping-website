@@ -8,11 +8,12 @@ import Homepage from "./pages/homepage/Homepage";
 import ShopPage from "./pages/shop/Shop";
 import Header from "./components/header/Header";
 import SignInAndUp from "./pages/sign-in-and-up/SignInAndUp";
-import { auth, createUserProfileDocument } from "./firebase/utils";
+import { auth, createUserProfileDocument  } from "./firebase/utils";
 import { setCurrentUser } from "./redux/user/userActions";
 
 import { selectCurrentUser } from "./redux/user/userSelectors";
 import CheckoutPage from "./pages/checkout/Checkout";
+
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -31,6 +32,7 @@ class App extends React.Component {
         });
       }
       setCurrentUser(userAuth);
+
     });
   }
 
